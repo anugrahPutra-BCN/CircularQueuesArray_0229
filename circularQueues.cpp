@@ -23,3 +23,9 @@ public:
         return;
     }
 
+    // Cek apakah antrian penuh
+    if (FRONT == -1) {
+        FRONT = 0;
+        REAR = 0;
+    }
+  
