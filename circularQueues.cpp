@@ -61,12 +61,13 @@ public:
    /**
     * @brief method for entering data into a queue
     * 
+    * this procedur print a message to the screen from user 
     */
-   void insert() {
-    int num;
-    cout << "Enter a number: ";
-    cin >> num;
-    cout << endl;
+   void insert() { /// this function is for insert a number in to queue
+    int num; /// variable to store numeric input from the user
+    cout << "Enter a number: "; 
+    cin >> num;  
+    cout << endl; 
 
     // cek apakah antrian penuh
     if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1)) {
@@ -89,7 +90,14 @@ public:
     queue_array[REAR] = num;
    }
 
-   void remove() {
+   
+   /**
+    * @brief  remove the front element from the queue
+    * 
+    * his method checks if the queue is empty. If it is not, it deletes
+    * 
+    */
+   void remove() { 
     // cek apakah antrian kosong
     if (FRONT == -1) {
         cout << "Queue under flow\n";
@@ -111,9 +119,16 @@ public:
     }
    }
 
-   void display() {
-        int FRONT_position = FRONT;
-        int REAR_position = REAR;
+
+   /**
+    * @brief Displays all elements in the queue
+    * 
+    * Displays data from FRONT to REAR according to queue order
+    * 
+    */
+   void display() { /// Used to display the contents of the queue without changing the original value of FRONT
+        int FRONT_position = FRONT; ///Used to assist the process of tracking queue elements
+        int REAR_position = REAR; ///  Copy of the REAR position of the queue for the element tracing process
 
         // cek apakah antrian kosong
         if (FRONT == -1) {
@@ -152,6 +167,12 @@ public:
     }
 };
 
+
+/**
+ * @brief The main function for running queue operations
+ * 
+ *
+ */
 int main()
 {
     Queues q;
