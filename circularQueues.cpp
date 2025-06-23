@@ -1,18 +1,67 @@
+/**
+ * @mainpage Documentation circular Queues
+ * 
+ * @section Introduction
+ * poroject ini merupakan project struktur data
+ * menggunkan struktur data queues dengan pendekatan circular arrays.
+ * 
+ * @section Opretation
+ * - en queue for insert elements into queue
+ * - de queue for delete elements form queue
+ * - show data / display
+ * 
+ * @section How to use
+ * 1. Insert 
+ * 2. Delete
+ * 3. Display
+ * 4. Exit
+ * 
+ * 
+ * @author yProfil
+ * - Nama : Anugrah Putra Rizkia
+ * - Nim : 20240140229
+ * - Kelas : E
+ * 
+ * @brief 
+ * @version 0.1
+ * @date 2025-06-23
+ * 
+ * @copyright Gibran@umy.ac.id (c) 2025
+ * 
+ */
+
+
+
 #include <iostream>
 using namespace std;
 
+/**
+ * @class Queues
+ * @brief This class is for operation queues
+ * 
+ */
 class Queues {
 private:
-    static const int max = 5;
-    int FRONT, REAR;
-    int queue_array[5];
+    int FRONT; /// private variable front for indicate firts element  
+    int REAR; /// private variable rear for indicate the last element
+    int max = 5; /// private variable max for capasity of element
+    int queue_array[5]; /// private variable queue_array to store elements
 
-public: 
+public:
+   /**
+    * @brief Constructor a new Queues object
+    * set default queues null
+    * with front = -1 and rear = -1
+    */
    Queues() {
     FRONT = -1;
     REAR = -1;
    }
 
+   /**
+    * @brief method for entering data into a queue
+    * 
+    */
    void insert() {
     int num;
     cout << "Enter a number: ";
